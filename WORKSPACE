@@ -8,11 +8,10 @@ go_rules_dependencies()
 
 go_register_toolchains()
 
-http_archive(
+git_repository(
     name = "com_google_protobuf",
-    sha256 = "b679cef31102ed8beddc39ecfd6368ee311cbee6f50742f13f21be7278781821",
-    strip_prefix = "protobuf-3.11.2",
-    urls = ["https://github.com/protocolbuffers/protobuf/releases/download/v3.11.2/protobuf-all-3.11.2.tar.gz"],
+    commit = "3a888e5315448e5c12e07714e89420d2da02fb8c",
+    remote = "https://github.com/steventangx/protobuf.git",
 )
 
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
